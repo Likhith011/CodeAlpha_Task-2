@@ -1,0 +1,116 @@
+/* Gradient background and font */
+/* Default: light mode */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --bg-gradient: linear-gradient(135deg, #a8edea, #fed6e3);
+  --calc-bg: rgba(255, 255, 255, 0.2);
+  --button-bg: #ffffffcc;
+  --button-hover-bg: #f0f0f0;
+  --button-color: #333;
+  --equal-bg: #4caf50;
+  --equal-hover-bg: #43a047;
+  --clear-bg: #f44336;
+  --clear-hover-bg: #e53935;
+  --font-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Dark mode overrides */
+body[data-theme="dark"] {
+  --bg-gradient: linear-gradient(135deg, #232526, #1c1c1c);
+  --calc-bg: rgba(20, 20, 20, 0.8);
+  --button-bg: #333333cc;
+  --button-hover-bg: #444444;
+  --button-color: #eee;
+  --equal-bg: #388e3c;
+  --equal-hover-bg: #2e7d32;
+  --clear-bg: #d32f2f;
+  --clear-hover-bg: #b71c1c;
+  --font-color: #ddd;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--font-color);
+}
+
+/* Calculator panel */
+.calculator {
+  background: var(--calc-bg);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 20px;
+  width: 320px;
+}
+
+/* Display */
+#display {
+  width: 290px;
+  height: 60px;
+  font-size: 32px;
+  text-align: right;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons layout */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+/* Button style */
+.buttons button {
+  background: var(--button-bg);
+  color: var(--button-color);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  font-size: 22px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  
+}
+
+.buttons button:hover {
+  background: var(--button-hover-bg);
+  transform: scale(1.05);
+}
+
+.buttons button:active {
+  transform: scale(0.95);
+}
+
+/* Clear button */
+.clear {
+  background: var(--clear-bg);
+  color: white;
+}
+
+.clear:hover {
+    background: var(--clear-hover-bg);
+}
+
+.equal {
+  background: var(--equal-bg);
+  color: white;
+}
+
+.equal:hover {
+  background: var(--equal-hover-bg);
+}
+
+#theme-toggle:hover {
+  background: var(--button-hover-bg);
+}
